@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            text-align: center;
+            font-size: 22px;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        td, tr, th {
+            border: 1px solid #000;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>Server with database</h1>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>r_num</th>
+                <th>r_surname_owner</th>
+                <th>r_breed</th>
+                <th>r_date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (register.length) { %>
+                <% register.forEach(({r_num, r_surname_owner, r_breed, r_date}) => { %>
+                    <tr>
+                        <td><%= r_num %></td>
+                        <td><%= r_surname_owner %></td>
+                        <td><%= r_breed %></td>
+                        <td><%= r_date %></td>
+                    </tr>
+                <% })%>
+            <% } %>
+        </tbody>
+    </table>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>d_num</th>
+                <th>d_surname</th>
+                <th>d_class</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (doctors.length) { %>
+                <% doctors.forEach(({d_num, d_surname, d_class}) => { %>
+                    <tr>
+                        <td><%= d_num %></td>
+                        <td><%= d_surname %></td>
+                        <td><%= d_class %></td>
+                    </tr>
+                <% })%>
+            <% } %>
+        </tbody>
+    </table>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>t_num</th>
+                <th>t_name_disease</th>
+                <th>t_stage</th>
+                <th>r_cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (tariffs.length) { %>
+                <% tariffs.forEach(({t_num, t_name_disease, t_stage, r_cost}) => { %>
+                    <tr>
+                        <td><%= t_num %></td>
+                        <td><%= t_name_disease %></td>
+                        <td><%= t_stage %></td>
+                        <td><%= r_cost %></td>
+                    </tr>
+                <% })%>
+            <% } %>
+        </tbody>
+    </table>
+    <hr>
+</body>
+</html>
